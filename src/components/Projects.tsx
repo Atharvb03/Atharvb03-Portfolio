@@ -4,20 +4,20 @@ import { useState } from 'react';
 import ProjectModal from './ProjectModal';
 
 // Project Review Platform screenshots
-import prpLogin from '@/assets/projects/Login.png';
-import prpH from '@/assets/projects/H.png';
-import prpCoordinator from '@/assets/projects/Coordinator.png';
-import prpCoordinatorAssignment from '@/assets/projects/CoOrdinator Assignment.png';
-import prpHOD from '@/assets/projects/HOD.png';
-import prpHODAllProjects from '@/assets/projects/HOD All Projects.png';
-import prpMenteeDashboard from '@/assets/projects/Mentee Dashboard.png';
-import prpMenteeReviews from '@/assets/projects/Mentee Reviews.png';
-import prpMenteeSubmission from '@/assets/projects/Mentee Submission.png';
-import prpMentorDashboard from '@/assets/projects/Mentor Dashboard.png';
-import prpMentorReviewing from '@/assets/projects/Mentor Reviewing.png';
+import prpLogin from '@/assets/projects/PRP/Login.png';
+import prpHomepage from '@/assets/projects/PRP/Homepage.png';
+import prpCoordinator from '@/assets/projects/PRP/Coordinator.png';
+import prpCoordinatorAssignment from '@/assets/projects/PRP/CoOrdinator Assignment.png';
+import prpHOD from '@/assets/projects/PRP/HOD.png';
+import prpHODAllProjects from '@/assets/projects/PRP/HOD All Projects.png';
+import prpMenteeDashboard from '@/assets/projects/PRP/Mentee Dashboard.png';
+import prpMenteeReviews from '@/assets/projects/PRP/Mentee Reviews.png';
+import prpMenteeSubmission from '@/assets/projects/PRP/Mentee Submission.png';
+import prpMentorDashboard from '@/assets/projects/PRP/Mentor Dashboard.png';
+import prpMentorReviewing from '@/assets/projects/PRP/Mentor Reviewing.png';
 
 const prpImages = [
-  prpH, prpLogin, prpMentorDashboard, prpMentorReviewing,
+  prpHomepage, prpLogin, prpMentorDashboard, prpMentorReviewing,
   prpMenteeDashboard, prpMenteeReviews, prpMenteeSubmission,
   prpCoordinator, prpCoordinatorAssignment, prpHOD, prpHODAllProjects,
 ];
