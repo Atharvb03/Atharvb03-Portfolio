@@ -97,7 +97,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
           {/* Image area — vertical pan only */}
           <div className="flex-1 flex items-center justify-center overflow-hidden px-16 relative select-none"
-            onClick={(e) => e.stopPropagation()}
             onWheel={(e) => {
               e.preventDefault();
               const delta = e.deltaY < 0 ? 0.15 : -0.15;
@@ -110,16 +109,16 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             onMouseDown={(e) => {
               if (zoom <= 1) return;
               e.preventDefault();
+              e.stopPropagation();
               dragRef.current = { x: e.clientX, y: e.clientY, panX: pan.x, panY: pan.y };
               setDragging(true);
             }}
             onMouseMove={(e) => {
               if (!dragging) return;
               const dy = e.clientY - dragRef.current.y;
-              // locked sideways — only vertical pan
               setPan({ x: 0, y: dragRef.current.panY + dy });
             }}
-            onMouseUp={() => setDragging(false)}
+            onMouseUp={(e) => { setDragging(false); if (dragging) e.stopPropagation(); }}
             onMouseLeave={() => setDragging(false)}
             style={{ cursor: zoom > 1 ? (dragging ? 'ns-resize' : 'grab') : 'default' }}
           >
