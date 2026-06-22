@@ -40,6 +40,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const dragRef = useRef({ x: 0, y: 0, panX: 0, panY: 0 });
+  const mouseDownOnImage = useRef(false);
 
   useEffect(() => { setImgIndex(0); setLightbox(false); setZoom(1); setFitMode(true); setGalleryZoom(1); setPan({ x: 0, y: 0 }); }, [project]);
 
@@ -70,7 +71,12 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     <>
       {/* Lightbox */}
       {lightbox && images.length > 0 && (
-        <div className="fixed inset-0 z-[70] flex flex-col bg-black/92 backdrop-blur-sm" onClick={(e) => { e.stopPropagation(); setLightbox(false); }}>
+        <div className="fixed inset-0 z-[70] flex flex-col bg-black/92 backdrop-blur-sm"
+          onClick={(e) => {
+            if (mouseDownOnImage.current) { mouseDownOnImage.current = false; return; }
+            e.stopPropagation();
+            setLightbox(false);
+          }}>
 
           {/* Top bar — close only */}
           <div className="flex-shrink-0 flex justify-end p-3 pt-4" onClick={(e) => e.stopPropagation()}>
@@ -107,6 +113,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               });
             }}
             onMouseDown={(e) => {
+              mouseDownOnImage.current = true;
               if (zoom <= 1) return;
               e.preventDefault();
               e.stopPropagation();
