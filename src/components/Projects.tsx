@@ -57,7 +57,7 @@ import ecoRewards2 from '@/assets/projects/Ecocyclehub/Rewards 2.png';
 import ecoRewards3 from '@/assets/projects/Ecocyclehub/Rewards 3.png';
 import ecoRewards4 from '@/assets/projects/Ecocyclehub/Rewards 4.png';
 import ecoMyProfile from '@/assets/projects/Ecocyclehub/Myprofile.png';
-import ecoSellerLogin from '@/assets/projects/Ecocyclehub/SellerLogi.jpeg';
+import ecoSellerLogin from '@/assets/projects/Ecocyclehub/SellerLogin.jpeg';
 import ecoSellerSignup from '@/assets/projects/Ecocyclehub/SellerSignup.jpeg';
 import ecoSeller1 from '@/assets/projects/Ecocyclehub/Seller 1.jpeg';
 import ecoSeller2 from '@/assets/projects/Ecocyclehub/Seller 2.jpeg';
