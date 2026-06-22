@@ -23,16 +23,16 @@ const prpImages = [
 ];
 
 // HireLens screenshots
-import hlHomepage from '@/assets/projects/hirelens/Homepage.png';
-import hlHomepage2 from '@/assets/projects/hirelens/Homepage2.png';
-import hlAbout from '@/assets/projects/hirelens/About.png';
-import hlCandidateDashboard from '@/assets/projects/hirelens/Candidate Dashboard.png';
-import hlProfile from '@/assets/projects/hirelens/Profile.png';
-import hlProfile2 from '@/assets/projects/hirelens/Profile2.png';
-import hlJobRecommendations from '@/assets/projects/hirelens/Job recommendations.png';
-import hlMyApplications from '@/assets/projects/hirelens/My applications.png';
-import hlRecruiterDashboard from '@/assets/projects/hirelens/Recruiter Dashboard.png';
-import hlScreening from '@/assets/projects/hirelens/Screening.png';
+import hlHomepage from '@/assets/projects/Hirelens/Homepage.png';
+import hlHomepage2 from '@/assets/projects/Hirelens/Homepage2.png';
+import hlAbout from '@/assets/projects/Hirelens/About.png';
+import hlCandidateDashboard from '@/assets/projects/Hirelens/Candidate Dashboard.png';
+import hlProfile from '@/assets/projects/Hirelens/Profile.png';
+import hlProfile2 from '@/assets/projects/Hirelens/Profile2.png';
+import hlJobRecommendations from '@/assets/projects/Hirelens/Job recommendations.png';
+import hlMyApplications from '@/assets/projects/Hirelens/My applications.png';
+import hlRecruiterDashboard from '@/assets/projects/Hirelens/Recruiter Dashboard.png';
+import hlScreening from '@/assets/projects/Hirelens/Screening.png';
 
 const hlImages = [
   hlHomepage, hlHomepage2, hlAbout,
@@ -42,31 +42,31 @@ const hlImages = [
 ];
 
 // EcoCycleHUB screenshots
-import ecoHomepage from '@/assets/projects/ecocyclehub/Homepage.png';
-import ecoAbout from '@/assets/projects/ecocyclehub/AboutUs.png';
-import ecoContact from '@/assets/projects/ecocyclehub/Contact.png';
-import ecoBuyersLogin from '@/assets/projects/ecocyclehub/Buyers Login.png';
-import ecoBuyersPortal from '@/assets/projects/ecocyclehub/Buyers Portal.png';
-import ecoBuyersPortal2 from '@/assets/projects/ecocyclehub/Buyers Portal2.png';
-import ecoCart from '@/assets/projects/ecocyclehub/Cart.png';
-import ecoDelivery from '@/assets/projects/ecocyclehub/delivery.png';
-import ecoCenters from '@/assets/projects/ecocyclehub/Centers.png';
-import ecoRepair from '@/assets/projects/ecocyclehub/Repair page.png';
-import ecoRewards1 from '@/assets/projects/ecocyclehub/Rewards 1.png';
-import ecoRewards2 from '@/assets/projects/ecocyclehub/Rewards 2.png';
-import ecoRewards3 from '@/assets/projects/ecocyclehub/Rewards 3.png';
-import ecoRewards4 from '@/assets/projects/ecocyclehub/Rewards 4.png';
-import ecoMyProfile from '@/assets/projects/ecocyclehub/Myprofile.png';
-import ecoSellerLogin from '@/assets/projects/ecocyclehub/Seller Login.png';
-import ecoSellerSignup from '@/assets/projects/ecocyclehub/Seller Signup 1.png';
-import ecoSeller1 from '@/assets/projects/ecocyclehub/Seller1.png';
-import ecoSeller2 from '@/assets/projects/ecocyclehub/Seller2.png';
-import ecoSeller3 from '@/assets/projects/ecocyclehub/Seller3.png';
-import ecoAdminLogin from '@/assets/projects/ecocyclehub/Admin Login.png';
-import ecoAdmin1 from '@/assets/projects/ecocyclehub/Admin1.png';
-import ecoAdmin2 from '@/assets/projects/ecocyclehub/Admin2.png';
-import ecoAdmin3 from '@/assets/projects/ecocyclehub/Admin3.png';
-import ecoAdmin4 from '@/assets/projects/ecocyclehub/Admin4.png';
+import ecoHomepage from '@/assets/projects/Ecocyclehub/Homepage.png';
+import ecoAbout from '@/assets/projects/Ecocyclehub/AboutUs.png';
+import ecoContact from '@/assets/projects/Ecocyclehub/Contact.png';
+import ecoBuyersLogin from '@/assets/projects/Ecocyclehub/Buyers Login.png';
+import ecoBuyersPortal from '@/assets/projects/Ecocyclehub/Buyers Portal.png';
+import ecoBuyersPortal2 from '@/assets/projects/Ecocyclehub/Buyers Portal2.png';
+import ecoCart from '@/assets/projects/Ecocyclehub/Cart.png';
+import ecoDelivery from '@/assets/projects/Ecocyclehub/delivery.png';
+import ecoCenters from '@/assets/projects/Ecocyclehub/Centers.png';
+import ecoRepair from '@/assets/projects/Ecocyclehub/Repair page.png';
+import ecoRewards1 from '@/assets/projects/Ecocyclehub/Rewards 1.png';
+import ecoRewards2 from '@/assets/projects/Ecocyclehub/Rewards 2.png';
+import ecoRewards3 from '@/assets/projects/Ecocyclehub/Rewards 3.png';
+import ecoRewards4 from '@/assets/projects/Ecocyclehub/Rewards 4.png';
+import ecoMyProfile from '@/assets/projects/Ecocyclehub/Myprofile.png';
+import ecoSellerLogin from '@/assets/projects/Ecocyclehub/SellerLogi.jpeg';
+import ecoSellerSignup from '@/assets/projects/Ecocyclehub/SellerSignup.jpeg';
+import ecoSeller1 from '@/assets/projects/Ecocyclehub/Seller 1.jpeg';
+import ecoSeller2 from '@/assets/projects/Ecocyclehub/Seller 2.jpeg';
+import ecoSeller3 from '@/assets/projects/Ecocyclehub/Seller 3.jpeg';
+import ecoAdminLogin from '@/assets/projects/Ecocyclehub/Admin Login.png';
+import ecoAdmin1 from '@/assets/projects/Ecocyclehub/Admin1.png';
+import ecoAdmin2 from '@/assets/projects/Ecocyclehub/Admin2.png';
+import ecoAdmin3 from '@/assets/projects/Ecocyclehub/Admin3.png';
+import ecoAdmin4 from '@/assets/projects/Ecocyclehub/Admin4.png';
 
 const ecoImages = [
   ecoHomepage, ecoAbout, ecoContact,
@@ -78,19 +78,19 @@ const ecoImages = [
 ];
 
 // ElevateU screenshots
-import euHomepage from '@/assets/projects/ElevateU/Homepage.png';
-import euLogin from '@/assets/projects/ElevateU/Login.png';
-import euCandidate from '@/assets/projects/ElevateU/Candidate page.png';
-import euProfile from '@/assets/projects/ElevateU/Profile.png';
-import euGame1 from '@/assets/projects/ElevateU/Game1.png';
-import euGame1of2 from '@/assets/projects/ElevateU/Game1of2.png';
-import euGame2 from '@/assets/projects/ElevateU/Game2.png';
-import euGame2of4 from '@/assets/projects/ElevateU/Game2of4.png';
-import euGame3 from '@/assets/projects/ElevateU/Game3.png';
-import euGame3of4 from '@/assets/projects/ElevateU/Game3of4.png';
+import euHomepage from '@/assets/projects/ElevateU/Homepag.jpeg';
+import euLogin from '@/assets/projects/ElevateU/Logi.jpeg';
+import euCandidate from '@/assets/projects/ElevateU/Candidatepag.jpeg';
+import euProfile from '@/assets/projects/ElevateU/Profil.jpeg';
+import euGame1 from '@/assets/projects/ElevateU/Game.jpeg';
+import euGame1of2 from '@/assets/projects/ElevateU/Game1of.jpeg';
+import euGame2 from '@/assets/projects/ElevateU/Game (1).jpeg';
+import euGame2of4 from '@/assets/projects/ElevateU/Game2of.jpeg';
+import euGame3 from '@/assets/projects/ElevateU/Game (2).jpeg';
+import euGame3of4 from '@/assets/projects/ElevateU/Game3of.jpeg';
 import euGame4of4 from '@/assets/projects/ElevateU/Game4of4.png';
-import euResult1 from '@/assets/projects/ElevateU/Result1.png';
-import euRoadmap from '@/assets/projects/ElevateU/Roadmap.png';
+import euResult1 from '@/assets/projects/ElevateU/Result.jpeg';
+import euRoadmap from '@/assets/projects/ElevateU/Roadma.jpeg';
 
 const euImages = [
   euHomepage, euLogin, euCandidate, euProfile,
