@@ -335,7 +335,7 @@ const Projects = () => {
         {/* Main featured project */}
         <div className="tech-card p-8 mb-8 border-2 border-primary/40 hover:border-primary transition-all duration-300 group bg-primary/[0.03]">
           <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
-            <div className="flex flex-wrap items-center gap-3">ctrl + click)
+            <div className="flex flex-wrap items-center gap-3">
               <h3 className="text-2xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">{mainProject.title}</h3>
               <span className="bg-amber-100 text-amber-700 border border-amber-300 text-xs font-bold px-3 py-1 rounded-full">
                 🏆 {mainProject.badge}
