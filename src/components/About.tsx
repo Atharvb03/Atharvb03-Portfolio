@@ -6,10 +6,9 @@ const About = () => {
     {
       degree: 'B.E. in CSE-AIML',
       institution: 'Gharda Institute Of Technology',
-      period: 'Expected 2026',
-      score: 'CGPA: 8.22 / 10',
+      period: 'Completed: 2026',
+      score: 'CGPA: 8.32 / 10',
       icon: '🎓',
-      badge: 'Current',
     },
     {
       degree: 'HSC (Higher Secondary Certificate)',
@@ -17,7 +16,6 @@ const About = () => {
       period: 'Completed',
       score: '74.50%',
       icon: '📚',
-      badge: null,
     },
     {
       degree: 'SSC (Secondary School Certificate)',
@@ -25,7 +23,6 @@ const About = () => {
       period: 'Completed',
       score: '88.80%',
       icon: '🏫',
-      badge: null,
     },
   ];
 
@@ -92,11 +89,6 @@ const About = () => {
                           <h4 className="text-lg font-semibold text-foreground">
                             {item.degree}
                           </h4>
-                          {item.badge && (
-                            <span className="bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 text-xs font-semibold px-3 py-1 rounded-full">
-                              {item.badge}
-                            </span>
-                          )}
                         </div>
                         <p className="text-primary font-medium mb-2">
                           {item.institution}

@@ -83,7 +83,7 @@ const Hero = () => {
               <Button
                 className="gap-2 text-base px-6 py-3 h-auto border-2 border-foreground/30 bg-transparent text-foreground hover:bg-foreground/5 transition-all duration-300 group"
                 variant="outline"
-                onClick={() => window.open('https://drive.google.com/file/d/1E6urLfknAQU6E8YwEuNJbKBvOw6DcRcs/view', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/1jI8am2bGwgyVPGAsJ6FovTEIceprVieb/view?usp=sharing', '_blank')}
               >
                 <Download className="h-5 w-5 group-hover:translate-y-1 group-hover:animate-bounce transition-transform duration-300" />
                 Download Resume
