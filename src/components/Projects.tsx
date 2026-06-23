@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Eye } from 'lucide-react';
+import { ExternalLink, Github, Eye, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import ProjectModal from './ProjectModal';
@@ -104,9 +104,10 @@ const mainProject = {
   badge: 'Deployed at College',
   category: 'Full-Stack Web Application',
   status: 'Completed',
+  duration: 'June 2024 – Mar 2025',
   description:
     'A comprehensive multi-role academic project review system built with modern web technologies and deployed for institutional use. Features secure authentication, cloud file storage, and structured mentor-student collaboration.',
-  tech: ['React.js', 'Tailwind CSS', 'MongoDB', 'Node.js', 'Express.js', 'AWS S3 & IAM', 'JWT', 'Vercel', 'Railway'],
+  tech: ['React.js', 'Tailwind CSS', 'MongoDB', 'Node.js', 'Express.js', 'AWS S3 & IAM', 'JWT', 'Vercel', 'Render'],
   features: [
     'Secure user authentication and role-based access control (Admin, Reviewer, User)',
     'Project upload and management with descriptions, tech stack, and media files',
@@ -146,9 +147,10 @@ const otherProjects = [
     title: 'HireLens',
     category: 'AI-based Recruitment Platform',
     status: 'Completed with ongoing improvements',
+    duration: 'Jan 2026 – Ongoing',
     description:
       'HireLens automates the recruitment pipeline using AI. It parses resumes, scores candidate-job fit, recommends jobs, ranks applicants, generates AI interview sessions, evaluates interview performance, and updates hiring statuses automatically.',
-    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'OpenAI/Gemini', 'Socket.io', 'Multer', 'Nodemailer', 'RapidAPI','Render','Vercel'],
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'OpenAI/Gemini', 'Socket.io', 'Multer', 'Nodemailer', 'RapidAPI', 'Vercel', 'Render'],
     features: [
       'Resume Parsing & Analysis – Extracts skills, education, experience, and contact details',
       'AI-Based Candidate Matching – Matches resumes with job descriptions using AI scoring',
@@ -185,9 +187,10 @@ const otherProjects = [
     title: 'EcoCycleHUB',
     category: 'AI + Sustainability + Full-Stack Web Application',
     status: 'Completed with ongoing improvements',
+    duration: 'May 2025 – Feb 2026',
     description:
       'EcoCycleHub is an AI-powered sustainability platform designed to promote efficient waste management and recycling. Connects users, recyclers, and organizations through a smart digital ecosystem that enables waste tracking, recycling recommendations, and environmental impact analysis.',
-    tech: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'FastAPI', 'Cloudinary', 'Stripe', 'Razorpay'],
+    tech: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'FastAPI', 'Cloudinary', 'Stripe', 'Razorpay', 'Vercel', 'Render'],
     features: [
       'AI-Based Resale Price Prediction using ML with rule-based fallback',
       'Recycle & Repair Center Finder using location and distance',
@@ -224,6 +227,7 @@ const otherProjects = [
     title: 'ElevateU',
     category: 'EdTech / AI Career Guidance',
     status: 'In Development',
+    duration: 'Hackathon Project',
     description:
       'A career discovery platform that turns assessment into interactive games. As students play, the system records performance and behavioral patterns, converts them into cognitive scores, and suggests suitable career paths with personalized roadmaps.',
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Framer Motion', 'Recharts', 'Supabase', 'Jest'],
@@ -262,6 +266,7 @@ const otherProjects = [
     title: 'CG Header File',
     category: 'Computer Graphics / C-C++ Academic Mini Project',
     status: 'Completed',
+    duration: 'Sep 2023 – Feb 2024',
     description:
       'A reusable custom C/C++ header file implementing core Computer Graphics algorithms using the BGI graphics.h library. Built as an academic mini project to demonstrate fundamental CG concepts through modular, reusable code.',
     tech: ['C', 'C++', 'BGI graphics.h', 'stdio.h', 'math.h', 'conio.h'],
@@ -330,7 +335,7 @@ const Projects = () => {
         {/* Main featured project */}
         <div className="tech-card p-8 mb-8 border-2 border-primary/40 hover:border-primary transition-all duration-300 group bg-primary/[0.03]">
           <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">ctrl + click)
               <h3 className="text-2xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">{mainProject.title}</h3>
               <span className="bg-amber-100 text-amber-700 border border-amber-300 text-xs font-bold px-3 py-1 rounded-full">
                 🏆 {mainProject.badge}
@@ -344,6 +349,13 @@ const Projects = () => {
           <span className="inline-block text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-300 px-3 py-1 rounded-md mb-4">
             {mainProject.category}
           </span>
+
+          {mainProject.duration && (
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-4">
+              <Calendar className="h-3.5 w-3.5" />
+              <span>{mainProject.duration}</span>
+            </div>
+          )}
 
           <p className="text-muted-foreground leading-relaxed mb-6">{mainProject.description}</p>
 
@@ -400,6 +412,13 @@ const Projects = () => {
               <span className="inline-block text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-300 px-3 py-1 rounded-md mb-3 w-fit">
                 {project.category}
               </span>
+
+              {project.duration && (
+                <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-3">
+                  <Calendar className="h-3.5 w-3.5" />
+                  <span>{project.duration}</span>
+                </div>
+              )}
 
               <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">{project.description}</p>
 

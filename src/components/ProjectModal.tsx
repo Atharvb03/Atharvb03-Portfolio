@@ -1,4 +1,4 @@
-import { X, Github, ExternalLink, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Maximize2, Minimize2 } from 'lucide-react';
+import { X, Github, ExternalLink, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Maximize2, Minimize2, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState, useRef } from 'react';
 
@@ -7,6 +7,7 @@ interface Project {
   badge?: string;
   category: string;
   status: string;
+  duration?: string;
   description: string;
   tech: string[];
   features: string[];
@@ -200,6 +201,12 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                   {project.status}
                 </span>
               </div>
+              {project.duration && (
+                <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1">
+                  <Calendar className="h-3.5 w-3.5" />
+                  <span>{project.duration}</span>
+                </div>
+              )}
             </div>
             <button onClick={onClose} className="flex-shrink-0 p-2 rounded-xl hover:bg-secondary transition-colors duration-200">
               <X className="h-5 w-5 text-muted-foreground" />
