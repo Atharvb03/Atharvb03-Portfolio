@@ -103,63 +103,127 @@ const euImages = [
   euResult1, euRoadmap,
 ];
 
-// CG Header File cover
+// CG Header File screenshots
 import cgCover from '@/assets/projects/CG Header File/cover.png';
 
-const mainProject = {
-  title: 'Project Review Platform',
-  badge: 'Deployed at College',
-  category: 'Full-Stack Web Application',
-  status: 'Completed',
-  duration: 'June 2024 – Mar 2025',
-  coverImage: prpCover, // Use the new cover image
+const cgImages: string[] = [];
+
+// Assessment Projects cover images
+import accredianCover from '@/assets/projects/Assessment Projects/Accredian/cover.png';
+import northpeakCover from '@/assets/projects/Assessment Projects/Northpeak Digital/cover.png';
+import weatherCover from '@/assets/projects/Assessment Projects/Weather Dashboard/cover.png';
+
+// ASSESSMENT PROJECTS - Technical Assessments
+const assessmentProjects = [
+  {
+    title: 'Accredian — Technical Assessment',
+    badge: 'Technical Assessment',
+    category: 'Frontend Development Challenge',
+    status: 'Completed',
+    description:
+      'Built a responsive web application as part of a technical assessment, focusing on clean UI implementation, reusable React components, and a smooth user experience.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    features: [
+      'Responsive frontend implementation',
+      'Reusable component-based architecture',
+      'Clean and user-focused UI',
+    ],
+    github: 'https://github.com/Atharvb03/Accredian-Enterprise-Webpage',
+    liveUrl: 'https://accredian-enterprise-webpage.vercel.app/',
+    coverImage: accredianCover,
+  },
+  {
+    title: 'NorthPeak Digital — Technical Assessment',
+    badge: 'Technical Assessment',
+    category: 'Frontend Development Challenge',
+    status: 'Completed',
+    description:
+      'Developed a responsive web experience as part of a technical assessment, translating requirements into a polished interface with reusable components and responsive layouts.',
+    tech: ['React.js', 'Vite', 'Tailwind CSS', 'Framer Motion', 'React Hook Form'],
+    features: [
+      'Responsive interface implementation',
+      'Reusable component architecture',
+      'Smooth animations with Framer Motion',
+    ],
+    github: 'https://github.com/Atharvb03/Northpeak_Digital',
+    liveUrl: 'https://northpeak-digital0.vercel.app/',
+    coverImage: northpeakCover,
+  },
+  {
+    title: 'Weather Dashboard',
+    badge: 'Technical Assessment',
+    category: 'API Integration Challenge',
+    status: 'Completed',
+    description:
+      'Built a responsive weather dashboard that integrates real-time weather data through an external API and presents location-based conditions through a clean, user-friendly interface.',
+    tech: ['Vue 3', 'Vite', 'Pinia', 'Axios', 'Vitest', 'OpenWeatherMap API'],
+    features: [
+      'Real-time weather data integration',
+      'Location-based weather conditions',
+      'Clean and intuitive interface',
+    ],
+    github: '', // To be added
+    liveUrl: '', // To be added
+    coverImage: weatherCover,
+  },
+];
+
+// FEATURED PROJECT - EcoCycleHUB
+const featuredProject = {
+  title: 'EcoCycleHUB',
+  badge: '🌱 AI + Full-Stack + Real-World Application',
+  category: 'AI + Sustainability + Full-Stack Web Application',
+  status: 'Completed with ongoing improvements',
+  duration: 'May 2025 – Feb 2026',
+  coverImage: ecoCover,
   description:
-    'A comprehensive multi-role academic project review system built with modern web technologies and deployed for institutional use. Features secure authentication, cloud file storage, and structured mentor-student collaboration.',
-  tech: ['React.js', 'Tailwind CSS', 'MongoDB', 'Node.js', 'Express.js', 'AWS S3 & IAM', 'JWT', 'Vercel', 'Render'],
+    'EcoCycleHub is an AI-powered sustainability platform designed to promote efficient waste management and recycling. Connects users, recyclers, and organizations through a smart digital ecosystem that enables waste tracking, recycling recommendations, and environmental impact analysis.',
+  tech: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'FastAPI', 'Cloudinary', 'Stripe', 'Razorpay', 'Vercel', 'Render'],
   features: [
-    'Secure user authentication and role-based access control (Admin, Reviewer, User)',
-    'Project upload and management with descriptions, tech stack, and media files',
-    'Review and rating mechanism with structured feedback and average score calculation',
-    'Interactive comment and discussion system for project-level collaboration',
-    'Advanced search, filter, and sorting for efficient project discovery',
-    '+ 5 more features...',
+    'AI-Based Resale Price Prediction using ML with rule-based fallback',
+    'Recycle & Repair Center Finder using location and distance',
+    'Circular Marketplace for buying reused/refurbished clothing and electronics',
+    'Eco Rewards System — earn points from login, orders, and recycling activities',
+    'Admin Dashboard for managing products, users, orders, seller KYC, and rewards',
+    '+ 10 more features...',
   ],
-  github: 'https://github.com/Atharvb03/Project_Review_Platform',
-  images: prpImages,
-  liveUrl: 'https://project-review-platform.vercel.app/',
-  problem: 'Academic project review is usually managed through scattered emails, manual mentor allocation, offline file sharing, and untracked feedback. This creates delays, duplicate work, unclear submission status, weak accountability, and difficulty for coordinators/HODs to monitor project progress across students, mentors, and academic years.',
-  solution: 'The Project Review Platform centralizes the complete project lifecycle. Mentees create projects, coordinators approve them and assign mentors, mentors review phase-wise submissions, and HOD/coordinators monitor progress through dashboards. The system supports secure file uploads, deadlines, remarks, notifications, academic-year tracking, and archived project history.',
+  github: 'https://github.com/Atharvb03/EcoCycleHub-Old',
+  images: ecoImages,
+  liveUrl: 'https://ecocyclehub-green.vercel.app/',
+  problem: 'Waste, unused products, and second-hand goods are often not managed properly. Users do not know where to recycle/repair items, how much old items are worth, or how their sustainable actions create impact. Buyers need a trusted way to purchase reused products, and sellers need a verified platform to list them.',
+  solution: 'EcoCycleHUB solves this by combining recycling support, repair discovery, resale commerce, and reward-based motivation in one platform. Users can find centers, submit items for recycle/repair, get estimated resale value, earn eco-points, buy reused products, track orders, and receive badges/certificates for sustainable activity.',
   fullFeatures: [
-    'Role-based dashboards for Mentee, Mentor, Project Coordinator, and HOD',
-    'Secure authentication with JWT login, Google OAuth, and email verification',
-    'Invite-code protected registration for Mentor, Coordinator, and HOD roles',
-    'Mentee project creation with duration, description, and group member details',
-    'Project approval and rejection workflow by Project Coordinator',
-    'Mentor assignment and reassignment for approved projects',
-    'Bulk mentor assignment support using CSV-style data',
-    'Phase-wise project submission workflow for 6-month and 1-year projects',
-    'Secure AWS S3 file upload and download using pre-signed URLs',
-    'Mentor review system with remarks for each submitted phase/file',
-    'Deadline setting, one-time deadline extension, and late submission tracking',
-    'Final project evaluation with automatic project completion and archiving',
-    'Academic year/batch management with active-year filtering',
-    'Real-time dashboard statistics for submissions, reviews, assignments, and completion status',
-    'Email and in-app notifications for assignments, uploads, remarks, deadlines, and final results',
-    'Archived project history — completed projects, uploaded files, mentor remarks, final evaluations, and academic-year records preserved for HOD/coordinator review',
+    'AI-Based Resale Price Prediction — predicts item value for electronics and fashion using ML, with rule-based fallback',
+    'Recycle & Repair Center Finder — shows nearby recycling/repair centers using location, distance, and fallback center data',
+    'Recycle/Repair Submission System — users submit products with condition, center, description, and estimated price',
+    'Eco Rewards System — users earn points from login, orders, and recycling activities',
+    'Leaderboard — ranks users by eco-points and shows their contribution breakdown',
+    'Bronze/Silver/Gold Levels — automatic user level calculation based on total points',
+    'Downloadable Eco Badges — users can download achievement badges as PDF',
+    'Downloadable Eco Certificates — Gold-level users can generate and download certificates',
+    'Circular Marketplace — users can buy reused/refurbished clothing and electronics',
+    'Advanced Buyer Portal — search, category filters, condition filters, price range, wishlist, sorting, and verified-seller filter',
+    'Cart and Checkout System — add products to cart and place orders',
+    'Multiple Payment Options — supports COD, Stripe, and Razorpay',
+    'Order Tracking — users, sellers, and admins can view/manage orders and statuses',
+    'Verified Seller Portal — sellers register, verify mobile OTP, upload profile/ID documents, and list products',
+    'Admin Dashboard — admin manages products, users, orders, seller KYC approvals, rewards, and recycle submissions',
   ],
-  architecture: 'React + Vite frontend → Express.js REST API → MongoDB database for users/projects/assignments/files/notifications/batches → AWS S3 for project file storage using pre-signed upload/download URLs. Authentication uses JWT, bcrypt password hashing, Passport Google OAuth, email verification, and OTP-based password reset. The backend is modularized into routes for auth, files, mentee workflow, assignments, batches, coordinator/HOD operations, and dashboard analytics.',
+  architecture: 'React + Vite frontend → Express.js REST API → MongoDB/Mongoose database + Cloudinary for file/image uploads → FastAPI ML service for price prediction → Stripe/Razorpay for payments. Admin, seller, buyer, and user-facing portals are all connected through the same backend API.',
 };
 
-const otherProjects = [
+// MAIN PROJECTS - 4 projects in specific order
+const mainProjects = [
+  // 1. HireLens
   {
     title: 'HireLens',
     category: 'AI-based Recruitment Platform',
     status: 'Completed with ongoing improvements',
     duration: 'Jan 2026 – Ongoing',
-    coverImage: hlCover, // Use cover image
+    coverImage: hlCover,
     description:
       'HireLens automates the recruitment pipeline using AI. It parses resumes, scores candidate-job fit, recommends jobs, ranks applicants, generates AI interview sessions, evaluates interview performance, and updates hiring statuses automatically.',
-    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'OpenAI/Gemini', 'Socket.io', 'Multer', 'Nodemailer', 'RapidAPI', 'Vercel', 'Render'],
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'OpenAI/Gemini', 'Socket.io'],
     features: [
       'Resume Parsing & Analysis – Extracts skills, education, experience, and contact details',
       'AI-Based Candidate Matching – Matches resumes with job descriptions using AI scoring',
@@ -192,56 +256,60 @@ const otherProjects = [
     ],
     architecture: 'React + Vite frontend → Express.js/Node.js API → MongoDB with Mongoose models → AI services using OpenAI/Gemini → Multer + PDF/DOCX parsing for resume uploads → Socket.io for real-time notifications → Nodemailer for email/status updates → External JSearch/RapidAPI integration for job recommendations.',
   },
+  // 2. PRP (Project Review Platform)
   {
-    title: 'EcoCycleHUB',
-    category: 'AI + Sustainability + Full-Stack Web Application',
-    status: 'Completed with ongoing improvements',
-    duration: 'May 2025 – Feb 2026',
-    coverImage: ecoCover, // Use cover image
+    title: 'Project Review Platform',
+    badge: 'Deployed at College',
+    category: 'Full-Stack Web Application',
+    status: 'Completed',
+    duration: 'June 2024 – Mar 2025',
+    coverImage: prpCover,
     description:
-      'EcoCycleHub is an AI-powered sustainability platform designed to promote efficient waste management and recycling. Connects users, recyclers, and organizations through a smart digital ecosystem that enables waste tracking, recycling recommendations, and environmental impact analysis.',
-    tech: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'FastAPI', 'Cloudinary', 'Stripe', 'Razorpay', 'Vercel', 'Render'],
+      'A comprehensive multi-role academic project review system built with modern web technologies and deployed for institutional use. Features secure authentication, cloud file storage, and structured mentor-student collaboration.',
+    tech: ['React.js', 'MongoDB', 'Node.js', 'Express.js', 'AWS S3', 'JWT'],
     features: [
-      'AI-Based Resale Price Prediction using ML with rule-based fallback',
-      'Recycle & Repair Center Finder using location and distance',
-      'Circular Marketplace for buying reused/refurbished clothing and electronics',
-      'Eco Rewards System — earn points from login, orders, and recycling activities',
-      'Admin Dashboard for managing products, users, orders, seller KYC, and rewards',
-      '+ 10 more features...',
+      'Secure user authentication and role-based access control (Admin, Reviewer, User)',
+      'Project upload and management with descriptions, tech stack, and media files',
+      'Review and rating mechanism with structured feedback and average score calculation',
+      'Interactive comment and discussion system for project-level collaboration',
+      'Advanced search, filter, and sorting for efficient project discovery',
+      '+ 5 more features...',
     ],
-    github: 'https://github.com/Atharvb03/EcoCycleHub-Old',
-    images: ecoImages,
-    liveUrl: 'https://ecocyclehub-green.vercel.app/',
-    problem: 'Waste, unused products, and second-hand goods are often not managed properly. Users do not know where to recycle/repair items, how much old items are worth, or how their sustainable actions create impact. Buyers need a trusted way to purchase reused products, and sellers need a verified platform to list them.',
-    solution: 'EcoCycleHUB solves this by combining recycling support, repair discovery, resale commerce, and reward-based motivation in one platform. Users can find centers, submit items for recycle/repair, get estimated resale value, earn eco-points, buy reused products, track orders, and receive badges/certificates for sustainable activity.',
+    github: 'https://github.com/Atharvb03/Project_Review_Platform',
+    images: prpImages,
+    liveUrl: 'https://project-review-platform.vercel.app/',
+    problem: 'Academic project review is usually managed through scattered emails, manual mentor allocation, offline file sharing, and untracked feedback. This creates delays, duplicate work, unclear submission status, weak accountability, and difficulty for coordinators/HODs to monitor project progress across students, mentors, and academic years.',
+    solution: 'The Project Review Platform centralizes the complete project lifecycle. Mentees create projects, coordinators approve them and assign mentors, mentors review phase-wise submissions, and HOD/coordinators monitor progress through dashboards. The system supports secure file uploads, deadlines, remarks, notifications, academic-year tracking, and archived project history.',
     fullFeatures: [
-      'AI-Based Resale Price Prediction — predicts item value for electronics and fashion using ML, with rule-based fallback',
-      'Recycle & Repair Center Finder — shows nearby recycling/repair centers using location, distance, and fallback center data',
-      'Recycle/Repair Submission System — users submit products with condition, center, description, and estimated price',
-      'Eco Rewards System — users earn points from login, orders, and recycling activities',
-      'Leaderboard — ranks users by eco-points and shows their contribution breakdown',
-      'Bronze/Silver/Gold Levels — automatic user level calculation based on total points',
-      'Downloadable Eco Badges — users can download achievement badges as PDF',
-      'Downloadable Eco Certificates — Gold-level users can generate and download certificates',
-      'Circular Marketplace — users can buy reused/refurbished clothing and electronics',
-      'Advanced Buyer Portal — search, category filters, condition filters, price range, wishlist, sorting, and verified-seller filter',
-      'Cart and Checkout System — add products to cart and place orders',
-      'Multiple Payment Options — supports COD, Stripe, and Razorpay',
-      'Order Tracking — users, sellers, and admins can view/manage orders and statuses',
-      'Verified Seller Portal — sellers register, verify mobile OTP, upload profile/ID documents, and list products',
-      'Admin Dashboard — admin manages products, users, orders, seller KYC approvals, rewards, and recycle submissions',
+      'Role-based dashboards for Mentee, Mentor, Project Coordinator, and HOD',
+      'Secure authentication with JWT login, Google OAuth, and email verification',
+      'Invite-code protected registration for Mentor, Coordinator, and HOD roles',
+      'Mentee project creation with duration, description, and group member details',
+      'Project approval and rejection workflow by Project Coordinator',
+      'Mentor assignment and reassignment for approved projects',
+      'Bulk mentor assignment support using CSV-style data',
+      'Phase-wise project submission workflow for 6-month and 1-year projects',
+      'Secure AWS S3 file upload and download using pre-signed URLs',
+      'Mentor review system with remarks for each submitted phase/file',
+      'Deadline setting, one-time deadline extension, and late submission tracking',
+      'Final project evaluation with automatic project completion and archiving',
+      'Academic year/batch management with active-year filtering',
+      'Real-time dashboard statistics for submissions, reviews, assignments, and completion status',
+      'Email and in-app notifications for assignments, uploads, remarks, deadlines, and final results',
+      'Archived project history — completed projects, uploaded files, mentor remarks, final evaluations, and academic-year records preserved for HOD/coordinator review',
     ],
-    architecture: 'React + Vite frontend → Express.js REST API → MongoDB/Mongoose database + Cloudinary for file/image uploads → FastAPI ML service for price prediction → Stripe/Razorpay for payments. Admin, seller, buyer, and user-facing portals are all connected through the same backend API.',
+    architecture: 'React + Vite frontend → Express.js REST API → MongoDB database for users/projects/assignments/files/notifications/batches → AWS S3 for project file storage using pre-signed URLs. Authentication uses JWT, bcrypt password hashing, Passport Google OAuth, email verification, and OTP-based password reset. The backend is modularized into routes for auth, files, mentee workflow, assignments, batches, coordinator/HOD operations, and dashboard analytics.',
   },
+  // 3. ElevateU
   {
     title: 'ElevateU',
     category: 'EdTech / AI Career Guidance',
     status: 'In Development',
     duration: 'Hackathon Project',
-    coverImage: euCover, // Use cover image
+    coverImage: euCover,
     description:
       'A career discovery platform that turns assessment into interactive games. As students play, the system records performance and behavioral patterns, converts them into cognitive scores, and suggests suitable career paths with personalized roadmaps.',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Framer Motion', 'Recharts', 'Supabase', 'Jest'],
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
     features: [
       'Game-based career discovery through interactive skill challenges',
       'Four core assessment games: Logic Lab, Smart Operations Lab, Constraint Crafter, and Fest Stall Simulator',
@@ -273,15 +341,16 @@ const otherProjects = [
     ],
     architecture: 'Next.js frontend + React UI → Next.js API routes → Supabase Auth + Supabase PostgreSQL database → Recommendation and roadmap services → Results dashboard with cognitive radar chart and domain alignment visualization.',
   },
+  // 4. CG Header File
   {
     title: 'CG Header File',
     category: 'Computer Graphics / C-C++ Academic Mini Project',
     status: 'Completed',
     duration: 'Sep 2023 – Feb 2024',
-    coverImage: cgCover, // Use cover image
+    coverImage: cgCover,
     description:
       'A reusable custom C/C++ header file implementing core Computer Graphics algorithms using the BGI graphics.h library. Built as an academic mini project to demonstrate fundamental CG concepts through modular, reusable code.',
-    tech: ['C', 'C++', 'BGI graphics.h', 'stdio.h', 'math.h', 'conio.h'],
+    tech: ['C', 'C++', 'BGI graphics.h'],
     features: [
       'DDA, Bresenham, and Midpoint line drawing algorithms',
       'Circle and ellipse drawing algorithms',
@@ -290,7 +359,7 @@ const otherProjects = [
       'Cohen-Sutherland and Liang-Barsky line clipping algorithms',
     ],
     github: 'https://github.com/Atharvb03/CG-Header-File',
-    images: [],
+    images: cgImages,
     problem: 'Implementing Computer Graphics algorithms from scratch for every lab program is time-consuming and error-prone. Students repeatedly write the same DDA, Bresenham, or transformation code across multiple programs without reusability or consistency.',
     solution: 'CG Header File consolidates all core CG algorithms into a single reusable cg.h header. Any C/C++ program can include this file and directly call functions for line drawing, circle drawing, filling, clipping, curves, and 2D transformations — saving time and ensuring consistent, tested implementations.',
     fullFeatures: [
@@ -323,14 +392,14 @@ const statusColor = (status: string) => {
 };
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<typeof mainProject | typeof otherProjects[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<typeof featuredProject | typeof mainProjects[0] | null>(null);
 
   return (
     <section id="projects" className="section-padding" style={{ background: 'linear-gradient(135deg, hsl(217 91% 60% / 0.05) 0%, hsl(142 76% 36% / 0.04) 100%)' }}>
       <div className="container-width">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-semibold px-4 py-1.5 rounded-full border border-primary/20 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             Portfolio
@@ -338,99 +407,117 @@ const Projects = () => {
           <h2 className="text-4xl font-bold mb-4">
             My <span className="gradient-text">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary rounded-full mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-gradient-primary rounded-full mx-auto mb-4"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A collection of projects showcasing my skills in web development, AI/ML, and software engineering
+            A collection of projects showcasing my skills in AI/ML, full-stack development, and software engineering
           </p>
         </div>
 
-        {/* Main featured project - Full width with cover image */}
-        <div className="group relative overflow-hidden rounded-2xl backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl mb-10"
-             style={{ background: 'rgba(255, 255, 255, 0.7)' }}>
+        {/* FEATURED PROJECT - EcoCycleHUB Hero Section */}
+        <div className="group relative overflow-hidden rounded-3xl backdrop-blur-sm border-2 border-primary/30 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl mb-16"
+             style={{ background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(255, 255, 255, 0.8) 100%)' }}>
           
           {/* Cover Image */}
-          <div className="relative h-72 overflow-hidden">
+          <div className="relative h-80 overflow-hidden">
             <img 
-              src={mainProject.coverImage} 
-              alt={mainProject.title}
+              src={featuredProject.coverImage} 
+              alt={featuredProject.title}
               className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
             />
             {/* Lighter Gradient Overlay - only at bottom */}
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/50 to-transparent"></div>
             
-            {/* Badges on Image */}
-            <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-              <span className="bg-amber-100 text-amber-700 border border-amber-300 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
-                🏆 {mainProject.badge}
+            {/* Status Badge - Top Right */}
+            <div className="absolute top-6 right-6">
+              <span className={`text-xs font-semibold px-3 py-1.5 rounded-full ${statusColor(featuredProject.status)} shadow-md`}>
+                {featuredProject.status}
               </span>
-              <span className={`text-xs font-semibold px-3 py-1.5 rounded-full ${statusColor(mainProject.status)} shadow-lg`}>
-                {mainProject.status}
+            </div>
+            
+            {/* Featured Badge and Category Badge - Bottom Left on gradient overlay */}
+            <div className="absolute bottom-6 left-6 flex flex-col gap-3">
+              <span className="bg-amber-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-xl border-2 border-white/30 backdrop-blur-sm w-fit">
+                ⭐ MAJOR PROJECT
+              </span>
+              <span className="bg-white/95 backdrop-blur-sm text-primary text-xs font-bold px-4 py-2 rounded-full shadow-lg border border-primary/20 w-fit">
+                {featuredProject.badge}
               </span>
             </div>
           </div>
 
           {/* Content */}
-          <div className="p-8">
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <h3 className="text-3xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">
-                {mainProject.title}
+          <div className="p-10">
+            <div className="flex flex-wrap items-center gap-4 mb-4">
+              <h3 className="text-4xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">
+                {featuredProject.title}
               </h3>
             </div>
 
-            <span className="inline-block text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-300 px-3 py-1.5 rounded-md mb-3">
-              {mainProject.category}
+            <span className="inline-block text-sm font-semibold bg-primary/10 text-primary border border-primary/30 px-4 py-2 rounded-lg mb-4">
+              {featuredProject.category}
             </span>
 
-            {mainProject.duration && (
-              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-5">
+            {featuredProject.duration && (
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
                 <Calendar className="h-4 w-4" />
-                <span>{mainProject.duration}</span>
+                <span>{featuredProject.duration}</span>
               </div>
             )}
 
-            <p className="text-muted-foreground leading-relaxed mb-6 text-base">{mainProject.description}</p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">{featuredProject.description}</p>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-6">
+            <div className="grid md:grid-cols-2 gap-10 mb-8">
               <div>
-                <h4 className="font-semibold text-foreground mb-3 text-sm">Technologies Used</h4>
+                <h4 className="font-bold text-foreground mb-4 text-base">Technologies Used</h4>
                 <div className="flex flex-wrap gap-2">
-                  {mainProject.tech.map((t) => (
-                    <span key={t} className="bg-blue-100 text-blue-700 border border-blue-200 px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-blue-200 transition-colors">
+                  {featuredProject.tech.map((t) => (
+                    <span key={t} className="bg-blue-100 text-blue-700 border border-blue-200 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-200 transition-colors">
                       {t}
                     </span>
                   ))}
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-foreground mb-3 text-sm">Key Features</h4>
-                <ul className="space-y-1.5">
-                  {mainProject.features.slice(0, -1).map((f, i) => (
+                <h4 className="font-bold text-foreground mb-4 text-base">Key Features</h4>
+                <ul className="space-y-2">
+                  {featuredProject.features.slice(0, -1).map((f, i) => (
                     <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
                       <span className="text-primary mt-0.5 text-lg leading-5">•</span>{f}
                     </li>
                   ))}
                 </ul>
-                <p className="text-sm text-muted-foreground mt-2 pl-1">{mainProject.features[mainProject.features.length - 1]}</p>
+                <p className="text-sm text-muted-foreground mt-2 pl-1">{featuredProject.features[featuredProject.features.length - 1]}</p>
               </div>
             </div>
 
-            <div className="flex gap-3 pt-4 border-t border-border/50">
-              <Button className="flex-1 gap-2 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg" onClick={() => setSelectedProject(mainProject)}>
-                <Eye className="h-4 w-4" /> View Full Details
+            <div className="flex gap-4 pt-6 border-t border-border/50">
+              <Button className="flex-1 gap-2 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg text-base py-6" onClick={() => setSelectedProject(featuredProject)}>
+                <Eye className="h-5 w-5" /> View Full Details
               </Button>
-              <Button size="icon" variant="outline" className="shadow-md hover:shadow-lg" onClick={() => window.open(mainProject.github, '_blank')}>
+              <Button size="lg" variant="outline" className="gap-2 shadow-md hover:shadow-lg border-2" onClick={() => window.open(featuredProject.github, '_blank')}>
                 <Github className="h-5 w-5" />
+                GitHub
               </Button>
-              <Button size="icon" variant="outline" className="shadow-md hover:shadow-lg" disabled={!mainProject.liveUrl} onClick={() => mainProject.liveUrl && window.open(mainProject.liveUrl, '_blank')} title={mainProject.liveUrl ? 'Live Demo' : 'Not available'}>
+              <Button size="lg" variant="outline" className="gap-2 shadow-md hover:shadow-lg border-2 border-primary/40 bg-primary/10 text-primary hover:bg-primary/20" disabled={!featuredProject.liveUrl} onClick={() => featuredProject.liveUrl && window.open(featuredProject.liveUrl, '_blank')} title={featuredProject.liveUrl ? 'Live Demo' : 'Not available'}>
                 <ExternalLink className="h-5 w-5" />
+                Live Demo
               </Button>
             </div>
           </div>
         </div>
 
-        {/* Other projects grid - Half width cards with cover images */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {otherProjects.map((project, index) => (
+        {/* MORE PROJECTS Section - 4 Main Projects */}
+        <div className="mb-16">
+          <div className="text-center mb-10">
+            <h3 className="text-3xl font-bold text-foreground mb-2">
+              More <span className="gradient-text">Projects</span>
+            </h3>
+            <div className="w-16 h-1 bg-gradient-primary rounded-full mx-auto mb-3"></div>
+            <p className="text-muted-foreground">Explore my other full-stack and technical projects</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {mainProjects.map((project, index) => (
             <div 
               key={index} 
               className="group relative overflow-hidden rounded-2xl backdrop-blur-sm border-2 border-border/50 hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
@@ -468,6 +555,12 @@ const Projects = () => {
                     </span>
                   )}
                 </div>
+
+                {project.badge && (
+                  <span className="inline-block text-xs font-bold bg-amber-100 text-amber-700 border border-amber-300 px-3 py-1.5 rounded-lg mb-2 w-fit shadow-sm">
+                    🏆 {project.badge}
+                  </span>
+                )}
 
                 <span className="inline-block text-xs font-semibold bg-slate-100/80 text-slate-600 border border-slate-300 px-3 py-1 rounded-md mb-3 w-fit">
                   {project.category}
@@ -521,6 +614,151 @@ const Projects = () => {
               </div>
             </div>
           ))}
+          </div>
+        </div>
+
+        {/* ASSESSMENT PROJECTS Section */}
+        <div className="mb-16">
+          <div className="text-center mb-10">
+            <h3 className="text-3xl font-bold text-foreground mb-2">
+              Assessment <span className="gradient-text">Projects</span>
+            </h3>
+            <div className="w-16 h-1 bg-gradient-primary rounded-full mx-auto mb-3"></div>
+            <p className="text-muted-foreground">Technical challenges completed for job and internship applications</p>
+          </div>
+
+          {/* 2 cards side by side */}
+          <div className="grid md:grid-cols-2 gap-5 mb-5">
+            {assessmentProjects.slice(0, 2).map((project, index) => (
+              <div 
+                key={index} 
+                className="group relative overflow-hidden rounded-xl backdrop-blur-sm border border-border/40 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                style={{ background: 'rgba(248, 250, 252, 0.5)' }}
+              >
+                {/* Cover Image (if exists) */}
+                {project.coverImage && (
+                  <div className="relative h-36 overflow-hidden">
+                    <img 
+                      src={project.coverImage} 
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                )}
+
+                {/* Content */}
+                <div className="p-5">
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h4>
+                  </div>
+
+                  <span className="inline-block text-xs font-bold bg-purple-100 text-purple-700 border border-purple-300 px-3 py-1 rounded-lg mb-2 w-fit shadow-sm">
+                    📝 {project.badge}
+                  </span>
+
+                  <span className="inline-block text-xs font-semibold bg-slate-100/80 text-slate-600 border border-slate-300 px-2.5 py-1 rounded-md mb-3 w-fit">
+                    {project.category}
+                  </span>
+
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">{project.description}</p>
+
+                  <div className="mb-3">
+                    <h5 className="font-semibold text-foreground text-xs mb-2">Technologies</h5>
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tech.slice(0, 5).map((t) => (
+                        <span key={t} className="bg-blue-50 text-blue-600 border border-blue-200 px-2 py-0.5 rounded text-xs font-medium">
+                          {t}
+                        </span>
+                      ))}
+                      {project.tech.length > 5 && (
+                        <span className="text-xs text-muted-foreground px-1">+{project.tech.length - 5}</span>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="flex gap-2 pt-3 border-t border-border/40">
+                    <Button size="sm" variant="outline" className="flex-1 gap-1.5 text-xs" disabled={!project.github} onClick={() => project.github && window.open(project.github, '_blank')}>
+                      <Github className="h-3.5 w-3.5" />
+                      GitHub
+                    </Button>
+                    <Button size="sm" variant="outline" className="flex-1 gap-1.5 text-xs" disabled={!project.liveUrl} onClick={() => project.liveUrl && window.open(project.liveUrl, '_blank')} title={project.liveUrl ? 'Live Demo' : 'Coming soon'}>
+                      <ExternalLink className="h-3.5 w-3.5" />
+                      Live Demo
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* 1 card centered below */}
+          {assessmentProjects.length > 2 && (
+            <div className="flex justify-center">
+              <div 
+                className="group relative overflow-hidden rounded-xl backdrop-blur-sm border border-border/40 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 w-full md:w-1/2"
+                style={{ background: 'rgba(248, 250, 252, 0.5)' }}
+              >
+                {/* Cover Image (if exists) */}
+                {assessmentProjects[2].coverImage && (
+                  <div className="relative h-36 overflow-hidden">
+                    <img 
+                      src={assessmentProjects[2].coverImage} 
+                      alt={assessmentProjects[2].title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                )}
+
+                {/* Content */}
+                <div className="p-5">
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                      {assessmentProjects[2].title}
+                    </h4>
+                  </div>
+
+                  <span className="inline-block text-xs font-bold bg-purple-100 text-purple-700 border border-purple-300 px-3 py-1 rounded-lg mb-2 w-fit shadow-sm">
+                    📝 {assessmentProjects[2].badge}
+                  </span>
+
+                  <span className="inline-block text-xs font-semibold bg-slate-100/80 text-slate-600 border border-slate-300 px-2.5 py-1 rounded-md mb-3 w-fit">
+                    {assessmentProjects[2].category}
+                  </span>
+
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">{assessmentProjects[2].description}</p>
+
+                  <div className="mb-3">
+                    <h5 className="font-semibold text-foreground text-xs mb-2">Technologies</h5>
+                    <div className="flex flex-wrap gap-1.5">
+                      {assessmentProjects[2].tech.slice(0, 5).map((t) => (
+                        <span key={t} className="bg-blue-50 text-blue-600 border border-blue-200 px-2 py-0.5 rounded text-xs font-medium">
+                          {t}
+                        </span>
+                      ))}
+                      {assessmentProjects[2].tech.length > 5 && (
+                        <span className="text-xs text-muted-foreground px-1">+{assessmentProjects[2].tech.length - 5}</span>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="flex gap-2 pt-3 border-t border-border/40">
+                    <Button size="sm" variant="outline" className="flex-1 gap-1.5 text-xs" disabled={!assessmentProjects[2].github} onClick={() => assessmentProjects[2].github && window.open(assessmentProjects[2].github, '_blank')}>
+                      <Github className="h-3.5 w-3.5" />
+                      GitHub
+                    </Button>
+                    <Button size="sm" variant="outline" className="flex-1 gap-1.5 text-xs" disabled={!assessmentProjects[2].liveUrl} onClick={() => assessmentProjects[2].liveUrl && window.open(assessmentProjects[2].liveUrl, '_blank')} title={assessmentProjects[2].liveUrl ? 'Live Demo' : 'Coming soon'}>
+                      <ExternalLink className="h-3.5 w-3.5" />
+                      Live Demo
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* GitHub CTA */}
