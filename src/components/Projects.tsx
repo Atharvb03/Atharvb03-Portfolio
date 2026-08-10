@@ -15,6 +15,7 @@ import prpMenteeReviews from '@/assets/projects/PRP/Mentee Reviews.png';
 import prpMenteeSubmission from '@/assets/projects/PRP/Mentee Submission.png';
 import prpMentorDashboard from '@/assets/projects/PRP/Mentor Dashboard.png';
 import prpMentorReviewing from '@/assets/projects/PRP/Mentor Reviewing.png';
+import prpCover from '@/assets/projects/PRP/cover.png';
 
 const prpImages = [
   prpHomepage, prpLogin, prpMentorDashboard, prpMentorReviewing,
@@ -33,6 +34,7 @@ import hlJobRecommendations from '@/assets/projects/Hirelens/Job recommendations
 import hlMyApplications from '@/assets/projects/Hirelens/My applications.png';
 import hlRecruiterDashboard from '@/assets/projects/Hirelens/Recruiter Dashboard.png';
 import hlScreening from '@/assets/projects/Hirelens/Screening.png';
+import hlCover from '@/assets/projects/Hirelens/cover.png';
 
 const hlImages = [
   hlHomepage, hlHomepage2, hlAbout,
@@ -67,6 +69,7 @@ import ecoAdmin1 from '@/assets/projects/Ecocyclehub/Admin1.png';
 import ecoAdmin2 from '@/assets/projects/Ecocyclehub/Admin2.png';
 import ecoAdmin3 from '@/assets/projects/Ecocyclehub/Admin3.png';
 import ecoAdmin4 from '@/assets/projects/Ecocyclehub/Admin4.png';
+import ecoCover from '@/assets/projects/Ecocyclehub/cover.png';
 
 const ecoImages = [
   ecoHomepage, ecoAbout, ecoContact,
@@ -91,6 +94,7 @@ import euGame3of4 from '@/assets/projects/ElevateU/Game3of.jpeg';
 import euGame4of4 from '@/assets/projects/ElevateU/Game4of4.png';
 import euResult1 from '@/assets/projects/ElevateU/Result.jpeg';
 import euRoadmap from '@/assets/projects/ElevateU/Roadma.jpeg';
+import euCover from '@/assets/projects/ElevateU/cover.png';
 
 const euImages = [
   euHomepage, euLogin, euCandidate, euProfile,
@@ -99,12 +103,16 @@ const euImages = [
   euResult1, euRoadmap,
 ];
 
+// CG Header File cover
+import cgCover from '@/assets/projects/CG Header File/cover.png';
+
 const mainProject = {
   title: 'Project Review Platform',
   badge: 'Deployed at College',
   category: 'Full-Stack Web Application',
   status: 'Completed',
   duration: 'June 2024 – Mar 2025',
+  coverImage: prpCover, // Use the new cover image
   description:
     'A comprehensive multi-role academic project review system built with modern web technologies and deployed for institutional use. Features secure authentication, cloud file storage, and structured mentor-student collaboration.',
   tech: ['React.js', 'Tailwind CSS', 'MongoDB', 'Node.js', 'Express.js', 'AWS S3 & IAM', 'JWT', 'Vercel', 'Render'],
@@ -148,6 +156,7 @@ const otherProjects = [
     category: 'AI-based Recruitment Platform',
     status: 'Completed with ongoing improvements',
     duration: 'Jan 2026 – Ongoing',
+    coverImage: hlCover, // Use cover image
     description:
       'HireLens automates the recruitment pipeline using AI. It parses resumes, scores candidate-job fit, recommends jobs, ranks applicants, generates AI interview sessions, evaluates interview performance, and updates hiring statuses automatically.',
     tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'OpenAI/Gemini', 'Socket.io', 'Multer', 'Nodemailer', 'RapidAPI', 'Vercel', 'Render'],
@@ -188,6 +197,7 @@ const otherProjects = [
     category: 'AI + Sustainability + Full-Stack Web Application',
     status: 'Completed with ongoing improvements',
     duration: 'May 2025 – Feb 2026',
+    coverImage: ecoCover, // Use cover image
     description:
       'EcoCycleHub is an AI-powered sustainability platform designed to promote efficient waste management and recycling. Connects users, recyclers, and organizations through a smart digital ecosystem that enables waste tracking, recycling recommendations, and environmental impact analysis.',
     tech: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'FastAPI', 'Cloudinary', 'Stripe', 'Razorpay', 'Vercel', 'Render'],
@@ -228,6 +238,7 @@ const otherProjects = [
     category: 'EdTech / AI Career Guidance',
     status: 'In Development',
     duration: 'Hackathon Project',
+    coverImage: euCover, // Use cover image
     description:
       'A career discovery platform that turns assessment into interactive games. As students play, the system records performance and behavioral patterns, converts them into cognitive scores, and suggests suitable career paths with personalized roadmaps.',
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Framer Motion', 'Recharts', 'Supabase', 'Jest'],
@@ -267,6 +278,7 @@ const otherProjects = [
     category: 'Computer Graphics / C-C++ Academic Mini Project',
     status: 'Completed',
     duration: 'Sep 2023 – Feb 2024',
+    coverImage: cgCover, // Use cover image
     description:
       'A reusable custom C/C++ header file implementing core Computer Graphics algorithms using the BGI graphics.h library. Built as an academic mini project to demonstrate fundamental CG concepts through modular, reusable code.',
     tech: ['C', 'C++', 'BGI graphics.h', 'stdio.h', 'math.h', 'conio.h'],
@@ -332,128 +344,180 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Main featured project */}
-        <div className="tech-card p-8 mb-8 border-2 border-primary/40 hover:border-primary transition-all duration-300 group bg-primary/[0.03]">
-          <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
-            <div className="flex flex-wrap items-center gap-3">
-              <h3 className="text-2xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">{mainProject.title}</h3>
-              <span className="bg-amber-100 text-amber-700 border border-amber-300 text-xs font-bold px-3 py-1 rounded-full">
+        {/* Main featured project - Full width with cover image */}
+        <div className="group relative overflow-hidden rounded-2xl backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl mb-10"
+             style={{ background: 'rgba(255, 255, 255, 0.7)' }}>
+          
+          {/* Cover Image */}
+          <div className="relative h-72 overflow-hidden">
+            <img 
+              src={mainProject.coverImage} 
+              alt={mainProject.title}
+              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            />
+            {/* Lighter Gradient Overlay - only at bottom */}
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent"></div>
+            
+            {/* Badges on Image */}
+            <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+              <span className="bg-amber-100 text-amber-700 border border-amber-300 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                 🏆 {mainProject.badge}
               </span>
-            </div>
-            <span className={`text-xs font-semibold px-3 py-1 rounded-full ${statusColor(mainProject.status)}`}>
-              {mainProject.status}
-            </span>
-          </div>
-
-          <span className="inline-block text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-300 px-3 py-1 rounded-md mb-4">
-            {mainProject.category}
-          </span>
-
-          {mainProject.duration && (
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-4">
-              <Calendar className="h-3.5 w-3.5" />
-              <span>{mainProject.duration}</span>
-            </div>
-          )}
-
-          <p className="text-muted-foreground leading-relaxed mb-6">{mainProject.description}</p>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-6">
-            <div>
-              <h4 className="font-semibold text-foreground mb-3">Technologies Used</h4>
-              <div className="flex flex-wrap gap-2">
-                {mainProject.tech.map((t) => (
-                  <span key={t} className="bg-blue-100 text-blue-600 border border-blue-200 px-3 py-1 rounded-full text-xs font-semibold">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h4 className="font-semibold text-foreground mb-3">Key Features</h4>
-              <ul className="space-y-1">
-                {mainProject.features.slice(0, -1).map((f, i) => (
-                  <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                    <span className="text-primary mt-0.5 text-lg leading-5">•</span>{f}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-sm text-muted-foreground mt-2 pl-1">{mainProject.features[mainProject.features.length - 1]}</p>
-            </div>
-          </div>
-
-          <div className="flex gap-3 pt-2 border-t border-border">
-            <Button className="flex-1 gap-2 bg-primary hover:bg-primary/90 text-primary-foreground" onClick={() => setSelectedProject(mainProject)}>
-              <Eye className="h-4 w-4" /> View Details
-            </Button>
-            <Button size="icon" variant="outline" onClick={() => window.open(mainProject.github, '_blank')}>
-              <Github className="h-4 w-4" />
-            </Button>
-            <Button size="icon" variant="outline" disabled={!mainProject.liveUrl} onClick={() => mainProject.liveUrl && window.open(mainProject.liveUrl, '_blank')} title={mainProject.liveUrl ? 'Live Demo' : 'Not available'}>
-              <ExternalLink className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-
-        {/* Four smaller project cards */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {otherProjects.map((project, index) => (
-            <div key={index} className="tech-card p-6 flex flex-col hover:border-primary/30 hover:shadow-lg border-2 transition-all duration-300 group">
-              <div className="flex items-start justify-between gap-3 mb-2">
-                <h3 className="text-xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">
-                  {project.title}
-                </h3>
-                <span className={`text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap ${statusColor(project.status)}`}>
-                  {project.status}
-                </span>
-              </div>
-
-              <span className="inline-block text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-300 px-3 py-1 rounded-md mb-3 w-fit">
-                {project.category}
+              <span className={`text-xs font-semibold px-3 py-1.5 rounded-full ${statusColor(mainProject.status)} shadow-lg`}>
+                {mainProject.status}
               </span>
+            </div>
+          </div>
 
-              {project.duration && (
-                <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-3">
-                  <Calendar className="h-3.5 w-3.5" />
-                  <span>{project.duration}</span>
-                </div>
-              )}
+          {/* Content */}
+          <div className="p-8">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <h3 className="text-3xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">
+                {mainProject.title}
+              </h3>
+            </div>
 
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">{project.description}</p>
+            <span className="inline-block text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-300 px-3 py-1.5 rounded-md mb-3">
+              {mainProject.category}
+            </span>
 
-              <div className="mb-4">
-                <h4 className="font-semibold text-foreground text-sm mb-2">Technologies Used</h4>
+            {mainProject.duration && (
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-5">
+                <Calendar className="h-4 w-4" />
+                <span>{mainProject.duration}</span>
+              </div>
+            )}
+
+            <p className="text-muted-foreground leading-relaxed mb-6 text-base">{mainProject.description}</p>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-6">
+              <div>
+                <h4 className="font-semibold text-foreground mb-3 text-sm">Technologies Used</h4>
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t) => (
-                    <span key={t} className="bg-blue-100 text-blue-600 border border-blue-200 px-2.5 py-0.5 rounded-full text-xs font-semibold">
+                  {mainProject.tech.map((t) => (
+                    <span key={t} className="bg-blue-100 text-blue-700 border border-blue-200 px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-blue-200 transition-colors">
                       {t}
                     </span>
                   ))}
                 </div>
               </div>
-
-              <div className="mb-4">
-                <h4 className="font-semibold text-foreground text-sm mb-2">Key Features</h4>
-                <ul className="space-y-1">
-                  {project.features.slice(0, 3).map((f, i) => (
-                    <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
-                      <span className="text-primary mt-0 text-base leading-4">•</span>{f}
+              <div>
+                <h4 className="font-semibold text-foreground mb-3 text-sm">Key Features</h4>
+                <ul className="space-y-1.5">
+                  {mainProject.features.slice(0, -1).map((f, i) => (
+                    <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                      <span className="text-primary mt-0.5 text-lg leading-5">•</span>{f}
                     </li>
                   ))}
                 </ul>
+                <p className="text-sm text-muted-foreground mt-2 pl-1">{mainProject.features[mainProject.features.length - 1]}</p>
               </div>
+            </div>
 
-              <div className="flex gap-3 pt-3 border-t border-border mt-auto">
-                <Button className="flex-1 gap-2 bg-primary hover:bg-primary/90 text-primary-foreground text-sm" onClick={() => setSelectedProject(project)}>
-                  <Eye className="h-4 w-4" /> View Details
-                </Button>
-                <Button size="icon" variant="outline" onClick={() => window.open(project.github, '_blank')}>
-                  <Github className="h-4 w-4" />
-                </Button>
-                <Button size="icon" variant="outline" disabled={!project.liveUrl} onClick={() => project.liveUrl && window.open(project.liveUrl, '_blank')} title={project.liveUrl ? 'Live Demo' : 'Not available'}>
-                  <ExternalLink className="h-4 w-4" />
-                </Button>
+            <div className="flex gap-3 pt-4 border-t border-border/50">
+              <Button className="flex-1 gap-2 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg" onClick={() => setSelectedProject(mainProject)}>
+                <Eye className="h-4 w-4" /> View Full Details
+              </Button>
+              <Button size="icon" variant="outline" className="shadow-md hover:shadow-lg" onClick={() => window.open(mainProject.github, '_blank')}>
+                <Github className="h-5 w-5" />
+              </Button>
+              <Button size="icon" variant="outline" className="shadow-md hover:shadow-lg" disabled={!mainProject.liveUrl} onClick={() => mainProject.liveUrl && window.open(mainProject.liveUrl, '_blank')} title={mainProject.liveUrl ? 'Live Demo' : 'Not available'}>
+                <ExternalLink className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Other projects grid - Half width cards with cover images */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          {otherProjects.map((project, index) => (
+            <div 
+              key={index} 
+              className="group relative overflow-hidden rounded-2xl backdrop-blur-sm border-2 border-border/50 hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              style={{ background: 'rgba(255, 255, 255, 0.6)' }}
+            >
+              {/* Cover Image (if exists) */}
+              {project.coverImage && (
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={project.coverImage} 
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {/* Lighter Gradient Overlay - only at bottom */}
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  
+                  {/* Status Badge on Image */}
+                  <div className="absolute top-3 right-3">
+                    <span className={`text-xs font-semibold px-3 py-1.5 rounded-full ${statusColor(project.status)} shadow-md`}>
+                      {project.status}
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {/* Content */}
+              <div className="p-6 flex flex-col">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <h3 className="text-xl font-bold text-foreground group-hover:gradient-text transition-all duration-300">
+                    {project.title}
+                  </h3>
+                  {!project.coverImage && (
+                    <span className={`text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap ${statusColor(project.status)}`}>
+                      {project.status}
+                    </span>
+                  )}
+                </div>
+
+                <span className="inline-block text-xs font-semibold bg-slate-100/80 text-slate-600 border border-slate-300 px-3 py-1 rounded-md mb-3 w-fit">
+                  {project.category}
+                </span>
+
+                {project.duration && (
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-3">
+                    <Calendar className="h-3.5 w-3.5" />
+                    <span>{project.duration}</span>
+                  </div>
+                )}
+
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{project.description}</p>
+
+                <div className="mb-4">
+                  <h4 className="font-semibold text-foreground text-sm mb-2">Technologies Used</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.slice(0, 6).map((t) => (
+                      <span key={t} className="bg-blue-100 text-blue-700 border border-blue-200 px-2.5 py-1 rounded-lg text-xs font-semibold hover:bg-blue-200 transition-colors">
+                        {t}
+                      </span>
+                    ))}
+                    {project.tech.length > 6 && (
+                      <span className="text-xs text-muted-foreground px-2 py-1">+{project.tech.length - 6} more</span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <h4 className="font-semibold text-foreground text-sm mb-2">Key Features</h4>
+                  <ul className="space-y-1">
+                    {project.features.slice(0, 3).map((f, i) => (
+                      <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
+                        <span className="text-primary mt-0 text-base leading-4">•</span>{f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex gap-3 pt-3 border-t border-border/50 mt-4">
+                  <Button className="flex-1 gap-2 bg-primary hover:bg-primary/90 text-primary-foreground text-sm shadow-md" onClick={() => setSelectedProject(project)}>
+                    <Eye className="h-4 w-4" /> View Details
+                  </Button>
+                  <Button size="icon" variant="outline" className="shadow-sm hover:shadow-md" onClick={() => window.open(project.github, '_blank')}>
+                    <Github className="h-4 w-4" />
+                  </Button>
+                  <Button size="icon" variant="outline" className="shadow-sm hover:shadow-md" disabled={!project.liveUrl} onClick={() => project.liveUrl && window.open(project.liveUrl, '_blank')} title={project.liveUrl ? 'Live Demo' : 'Not available'}>
+                    <ExternalLink className="h-4 w-4" />
+                  </Button>
+                </div>
               </div>
             </div>
           ))}

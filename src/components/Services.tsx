@@ -67,87 +67,85 @@ const Experience = () => {
           </p>
         </div>
 
-        {/* Experience Cards */}
-        <div className="space-y-6 max-w-4xl mx-auto">
+        {/* Experience Cards - Side by side */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {experiences.map((exp, i) => (
-            <div key={i} className="tech-card p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-              <div className="flex items-start gap-5">
+            <div key={i} className="tech-card p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col">
+              <div className="flex items-start gap-4 mb-4">
 
                 {/* Icon */}
                 <div className="flex-shrink-0 bg-primary/10 p-3 rounded-xl">
                   <Code2 className="h-6 w-6 text-primary" />
                 </div>
 
-                {/* Content */}
-                <div className="flex-1">
-                  {/* Top row */}
-                  <div className="flex flex-wrap items-start justify-between gap-3 mb-1">
-                    <h3 className="text-xl font-bold text-foreground">{exp.title}</h3>
-                    <div className="flex gap-2">
-                      <span className={`text-xs font-semibold px-3 py-1 rounded-full ${statusColor(exp.status)}`}>
-                        {exp.status}
-                      </span>
-                      <span className="text-xs font-semibold px-3 py-1 rounded-full bg-secondary text-muted-foreground">
-                        {exp.type}
-                      </span>
-                    </div>
-                  </div>
-
+                {/* Top content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-xl font-bold text-foreground mb-1">{exp.title}</h3>
                   <p className="text-primary font-medium mb-2">{exp.company}</p>
-
-                  {/* Meta */}
-                  <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="h-3.5 w-3.5" /> {exp.duration}
+                  
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className={`text-xs font-semibold px-3 py-1 rounded-full ${statusColor(exp.status)}`}>
+                      {exp.status}
                     </span>
-                    <span className="flex items-center gap-1">
-                      <MapPin className="h-3.5 w-3.5" /> {exp.location}
+                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-secondary text-muted-foreground">
+                      {exp.type}
                     </span>
-                  </div>
-
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{exp.description}</p>
-
-                  {/* Key Highlights */}
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-foreground text-sm mb-2">Key Highlights</h4>
-                    <ul className="space-y-1">
-                      {exp.highlights.map((h, hi) => (
-                        <li key={hi} className="text-sm text-muted-foreground flex items-start gap-2">
-                          <span className="text-primary leading-5 mt-0.5 flex-shrink-0 text-lg">•</span>
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Technologies */}
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-foreground text-sm mb-2">Technologies</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.tech.map((t) => (
-                        <span key={t} className="bg-blue-100 text-blue-600 border border-blue-200 px-3 py-1 rounded-full text-xs font-semibold dark:bg-blue-900/20 dark:text-blue-400 dark:border-blue-800">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex flex-wrap gap-4 pt-2 border-t border-border">
-                    {exp.offerLetterUrl && (
-                      <a href={exp.offerLetterUrl} target="_blank" rel="noopener noreferrer"
-                        className="text-sm text-primary hover:underline font-medium flex items-center gap-1">
-                        <ExternalLink className="h-3.5 w-3.5" /> View Offer Letter
-                      </a>
-                    )}
-                    {exp.certificateUrl && (
-                      <a href={exp.certificateUrl} target="_blank" rel="noopener noreferrer"
-                        className="text-sm text-primary hover:underline font-medium flex items-center gap-1">
-                        <ExternalLink className="h-3.5 w-3.5" /> View Certificate
-                      </a>
-                    )}
                   </div>
                 </div>
+              </div>
+
+              {/* Meta */}
+              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
+                <span className="flex items-center gap-1">
+                  <Calendar className="h-3.5 w-3.5" /> {exp.duration}
+                </span>
+                <span className="flex items-center gap-1">
+                  <MapPin className="h-3.5 w-3.5" /> {exp.location}
+                </span>
+              </div>
+
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">{exp.description}</p>
+
+              {/* Key Highlights */}
+              <div className="mb-4 flex-1">
+                <h4 className="font-semibold text-foreground text-sm mb-2">Key Highlights</h4>
+                <ul className="space-y-1">
+                  {exp.highlights.map((h, hi) => (
+                    <li key={hi} className="text-sm text-muted-foreground flex items-start gap-2">
+                      <span className="text-primary leading-5 mt-0.5 flex-shrink-0 text-lg">•</span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Technologies */}
+              <div className="mb-4">
+                <h4 className="font-semibold text-foreground text-sm mb-2">Technologies</h4>
+                <div className="flex flex-wrap gap-2">
+                  {exp.tech.map((t) => (
+                    <span key={t} className="bg-blue-100 text-blue-600 border border-blue-200 px-3 py-1 rounded-full text-xs font-semibold dark:bg-blue-900/20 dark:text-blue-400 dark:border-blue-800">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Links */}
+              <div className="flex flex-wrap gap-4 pt-3 border-t border-border mt-auto">
+                {exp.offerLetterUrl && (
+                  <a href={exp.offerLetterUrl} target="_blank" rel="noopener noreferrer"
+                    className="text-sm text-primary hover:underline font-medium flex items-center gap-1">
+                    <ExternalLink className="h-3.5 w-3.5" /> View Offer Letter
+                  </a>
+                )}
+                {exp.certificateUrl && (
+                  <a href={exp.certificateUrl} target="_blank" rel="noopener noreferrer"
+                    className="text-sm text-primary hover:underline font-medium flex items-center gap-1">
+                    <ExternalLink className="h-3.5 w-3.5" /> View Certificate
+                  </a>
+                )}
               </div>
             </div>
           ))}

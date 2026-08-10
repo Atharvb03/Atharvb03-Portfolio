@@ -96,7 +96,7 @@ const Skills = () => {
       <div className="container-width">
 
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-semibold px-4 py-1.5 rounded-full border border-primary/20 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             Technical Skills
@@ -110,59 +110,86 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* 2x2 skill cards grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-10">
+        {/* Main Skills Grid - Bento Box Style */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {skillGroups.map((group, gi) => (
-            <div key={gi} className="tech-card p-6">
-              {/* Card header */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`${group.iconBg} p-2 rounded-lg`}>
-                  <group.icon className="h-5 w-5 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground">{group.title}</h3>
+            <div 
+              key={gi} 
+              className="tech-card p-6 hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
+              style={{
+                background: `linear-gradient(135deg, ${
+                  gi === 0 ? 'rgba(34, 197, 94, 0.05)' : 
+                  gi === 1 ? 'rgba(59, 130, 246, 0.05)' : 
+                  gi === 2 ? 'rgba(139, 92, 246, 0.05)' : 
+                  'rgba(249, 115, 22, 0.05)'
+                } 0%, transparent 100%)`
+              }}
+            >
+              {/* Decorative blur effect */}
+              <div className={`absolute -top-20 -right-20 w-40 h-40 ${group.iconBg} opacity-10 blur-3xl rounded-full group-hover:opacity-20 transition-opacity`}></div>
+              
+              {/* Icon */}
+              <div className={`${group.iconBg} w-12 h-12 rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform`}>
+                <group.icon className="h-6 w-6 text-white" />
               </div>
 
-              {/* Skills with progress bars */}
-              <div className="space-y-4">
+              {/* Category Title */}
+              <h3 className="text-lg font-bold text-foreground mb-6">{group.title}</h3>
+
+              {/* Skills List with Modern Design */}
+              <div className="space-y-3">
                 {group.skills.map((skill, si) => (
-                  <div key={si}>
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm text-foreground">{skill.name}</span>
-                      <span className={`text-xs text-white font-semibold px-2 py-0.5 rounded-full ${badgeColor(skill.level)}`}>
-                        {skill.level}%
+                  <div key={si} className="group/skill">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-medium text-foreground group-hover/skill:text-primary transition-colors">
+                        {skill.name}
                       </span>
-                    </div>
-                    <div className="w-full bg-secondary rounded-full h-1.5">
-                      <div
-                        className={`${barColor(skill.level)} h-1.5 rounded-full transition-all duration-1000`}
-                        style={{ width: `${skill.level}%` }}
-                      />
+                      <div className="flex items-center gap-2">
+                        <div className="w-16 h-1.5 bg-secondary rounded-full overflow-hidden">
+                          <div 
+                            className={`h-full ${barColor(skill.level)} rounded-full transition-all duration-1000`}
+                            style={{ width: `${skill.level}%` }}
+                          />
+                        </div>
+                        <span className="text-xs font-bold text-muted-foreground min-w-[32px] text-right">
+                          {skill.level}%
+                        </span>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
+
+              {/* Corner decoration */}
+              <div className={`absolute bottom-0 right-0 w-20 h-20 ${group.iconBg} opacity-5 rounded-tl-full`}></div>
             </div>
           ))}
         </div>
 
-        {/* Additional Technologies */}
-        <div className="text-center mb-16">
-          <h3 className="text-xl font-bold text-foreground mb-6">Additional Technologies & Frameworks</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {additionalTech.map((tech, i) => (
-              <span
-                key={tech}
-                className={`text-sm px-4 py-1.5 rounded-full border font-medium cursor-default transition-all duration-300 ${tagColors[i % tagColors.length]}`}
-              >
-                {tech}
-              </span>
-            ))}
+        {/* Additional Technologies - Glassmorphism Cards */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-2">Additional Technologies & Frameworks</h3>
+            <div className="w-16 h-1 bg-gradient-primary rounded-full mx-auto"></div>
+          </div>
+          
+          <div className="tech-card p-8 backdrop-blur-sm" style={{ background: 'rgba(255, 255, 255, 0.5)' }}>
+            <div className="flex flex-wrap justify-center gap-3">
+              {additionalTech.map((tech, i) => (
+                <span
+                  key={tech}
+                  className={`text-sm px-5 py-2.5 rounded-lg border-2 font-semibold cursor-default transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover:shadow-md ${tagColors[i % tagColors.length]}`}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Certifications */}
+        {/* Certifications with Timeline Style */}
         <div>
-          <div className="text-center mb-10">
+          <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-700 text-xs font-semibold px-4 py-1.5 rounded-full border border-amber-200 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
               Achievements
@@ -174,21 +201,41 @@ const Skills = () => {
             <p className="text-lg text-muted-foreground">A showcase of my professional certifications and achievements</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, i) => (
-              <div key={i} className="tech-card p-6 flex flex-col gap-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group">
-                <h4 className="text-base font-bold text-foreground leading-snug group-hover:gradient-text transition-all duration-300">{cert.title}</h4>
-                <span className="inline-block bg-secondary text-muted-foreground text-xs px-3 py-1 rounded-full w-fit">
-                  {cert.issuer}
-                </span>
-                <p className="text-sm text-muted-foreground">{cert.date}</p>
+              <div 
+                key={i} 
+                className="tech-card p-6 flex flex-col gap-4 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group relative overflow-hidden border-l-4 border-primary"
+              >
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-accent/0 group-hover:from-primary/5 group-hover:to-accent/5 transition-all duration-300 -z-10"></div>
+                
+                {/* Certificate Number Badge */}
+                <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">
+                  {i + 1}
+                </div>
+
+                <h4 className="text-base font-bold text-foreground leading-snug group-hover:gradient-text transition-all duration-300 pr-8">
+                  {cert.title}
+                </h4>
+                
+                <div className="flex items-center gap-2">
+                  <div className="h-8 w-1 bg-gradient-primary rounded-full"></div>
+                  <span className="inline-block bg-secondary text-muted-foreground text-xs px-3 py-1.5 rounded-lg font-medium">
+                    {cert.issuer}
+                  </span>
+                </div>
+
+                <p className="text-sm text-muted-foreground font-medium">{cert.date}</p>
+                
                 <a
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-primary hover:underline font-medium mt-auto"
+                  className="text-sm text-primary hover:text-accent font-semibold mt-auto flex items-center gap-1 group-hover:gap-2 transition-all"
                 >
-                  View Certificate →
+                  View Certificate 
+                  <span className="text-lg">→</span>
                 </a>
               </div>
             ))}
