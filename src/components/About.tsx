@@ -45,19 +45,24 @@ const About = () => {
 
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Motivated Computer Science student with a strong foundation in{' '}
-                <span className="text-primary font-semibold">Artificial Intelligence</span> and{' '}
-                <span className="text-accent font-semibold">Python programming</span>. 
-                Deeply interested in developing intelligent systems and solving real-world problems 
-                using AI technologies.
+                Computer Science graduate focused on{' '}
+                <span className="text-primary font-semibold">Full-Stack, Web, and Software Development</span>. 
+                I build complete solutions from frontend to backend, with experience in creating responsive 
+                interfaces, backend services, REST APIs, and database-driven applications that solve real-world problems.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Skilled in modern web development tools including{' '}
-                <span className="text-primary font-semibold">HTML, CSS, JavaScript, React</span>, and{' '}
-                <span className="text-accent font-semibold">MongoDB</span>. Currently focused on 
-                enhancing expertise in AI algorithms, data-driven development, and Python-based 
-                applications to build innovative and impactful solutions.
+                My core stack includes{' '}
+                <span className="text-primary font-semibold">React, JavaScript, Node.js, Express</span>, and{' '}
+                <span className="text-accent font-semibold">MongoDB, SQL, Python</span>. I'm passionate about 
+                writing clean, performant code with a strong focus on usability and practical problem-solving.
+              </p>
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Beyond traditional web development, I'm deeply interested in{' '}
+                <span className="text-primary font-semibold">AI/ML and Python-based applications</span>, 
+                with the goal of combining intelligent technologies with modern software development to 
+                build innovative and impactful solutions.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
