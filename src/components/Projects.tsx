@@ -112,6 +112,7 @@ const cgImages: string[] = [];
 import accredianCover from '@/assets/projects/Assessment Projects/Accredian/cover.png';
 import northpeakCover from '@/assets/projects/Assessment Projects/Northpeak Digital/cover.png';
 import weatherCover from '@/assets/projects/Assessment Projects/Weather Dashboard/cover.png';
+import tcongsCover from '@/assets/projects/Assessment Projects/Tcongs/cover.png';
 
 // ASSESSMENT PROJECTS - Technical Assessments
 const assessmentProjects = [
@@ -162,9 +163,26 @@ const assessmentProjects = [
       'Location-based weather conditions',
       'Clean and intuitive interface',
     ],
-    github: '', // To be added
-    liveUrl: '', // To be added
+    github: 'https://github.com/Atharvb03/Weather-Dashboard',
+    liveUrl: 'https://weather-dashboard0.vercel.app/',
     coverImage: weatherCover,
+  },
+  {
+    title: 'TCONGS Infotech — Website Redesign',
+    badge: 'Technical Assessment',
+    category: 'Frontend Development Challenge',
+    status: 'Completed',
+    description:
+      'Redesigned and developed a modern, responsive digital agency website with interactive animations, service discovery, process visualization, FAQ, contact flow, and optimized responsive UI.',
+    tech: ['React.js', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Lucide React', 'Vercel'],
+    features: [
+      'Interactive animations and transitions',
+      'Service discovery and process visualization',
+      'Optimized responsive UI',
+    ],
+    github: 'https://github.com/Atharvb03/Tcongs-Assessment',
+    liveUrl: 'https://tcongsinfotech0.vercel.app/',
+    coverImage: tcongsCover,
   },
 ];
 
@@ -627,9 +645,9 @@ const Projects = () => {
             <p className="text-muted-foreground">Technical challenges completed for job and internship applications</p>
           </div>
 
-          {/* 2 cards side by side */}
-          <div className="grid md:grid-cols-2 gap-5 mb-5">
-            {assessmentProjects.slice(0, 2).map((project, index) => (
+          {/* All 4 assessment cards in 2x2 grid */}
+          <div className="grid md:grid-cols-2 gap-5">
+            {assessmentProjects.map((project, index) => (
               <div 
                 key={index} 
                 className="group relative overflow-hidden rounded-xl backdrop-blur-sm border border-border/40 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
@@ -693,72 +711,6 @@ const Projects = () => {
               </div>
             ))}
           </div>
-
-          {/* 1 card centered below */}
-          {assessmentProjects.length > 2 && (
-            <div className="flex justify-center">
-              <div 
-                className="group relative overflow-hidden rounded-xl backdrop-blur-sm border border-border/40 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 w-full md:w-1/2"
-                style={{ background: 'rgba(248, 250, 252, 0.5)' }}
-              >
-                {/* Cover Image (if exists) */}
-                {assessmentProjects[2].coverImage && (
-                  <div className="relative h-36 overflow-hidden">
-                    <img 
-                      src={assessmentProjects[2].coverImage} 
-                      alt={assessmentProjects[2].title}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/30 to-transparent"></div>
-                  </div>
-                )}
-
-                {/* Content */}
-                <div className="p-5">
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                      {assessmentProjects[2].title}
-                    </h4>
-                  </div>
-
-                  <span className="inline-block text-xs font-bold bg-purple-100 text-purple-700 border border-purple-300 px-3 py-1 rounded-lg mb-2 w-fit shadow-sm">
-                    📝 {assessmentProjects[2].badge}
-                  </span>
-
-                  <span className="inline-block text-xs font-semibold bg-slate-100/80 text-slate-600 border border-slate-300 px-2.5 py-1 rounded-md mb-3 w-fit">
-                    {assessmentProjects[2].category}
-                  </span>
-
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">{assessmentProjects[2].description}</p>
-
-                  <div className="mb-3">
-                    <h5 className="font-semibold text-foreground text-xs mb-2">Technologies</h5>
-                    <div className="flex flex-wrap gap-1.5">
-                      {assessmentProjects[2].tech.slice(0, 5).map((t) => (
-                        <span key={t} className="bg-blue-50 text-blue-600 border border-blue-200 px-2 py-0.5 rounded text-xs font-medium">
-                          {t}
-                        </span>
-                      ))}
-                      {assessmentProjects[2].tech.length > 5 && (
-                        <span className="text-xs text-muted-foreground px-1">+{assessmentProjects[2].tech.length - 5}</span>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="flex gap-2 pt-3 border-t border-border/40">
-                    <Button size="sm" variant="outline" className="flex-1 gap-1.5 text-xs" disabled={!assessmentProjects[2].github} onClick={() => assessmentProjects[2].github && window.open(assessmentProjects[2].github, '_blank')}>
-                      <Github className="h-3.5 w-3.5" />
-                      GitHub
-                    </Button>
-                    <Button size="sm" variant="outline" className="flex-1 gap-1.5 text-xs" disabled={!assessmentProjects[2].liveUrl} onClick={() => assessmentProjects[2].liveUrl && window.open(assessmentProjects[2].liveUrl, '_blank')} title={assessmentProjects[2].liveUrl ? 'Live Demo' : 'Coming soon'}>
-                      <ExternalLink className="h-3.5 w-3.5" />
-                      Live Demo
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* GitHub CTA */}
