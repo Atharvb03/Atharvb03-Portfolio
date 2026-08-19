@@ -205,7 +205,7 @@ const featuredProject = {
     'Admin Dashboard for managing products, users, orders, seller KYC, and rewards',
     '+ 10 more features...',
   ],
-  github: 'https://github.com/Atharvb03/EcoCycleHub-Old',
+  github: 'https://github.com/Atharvb03/EcoCycleHUB',
   images: ecoImages,
   liveUrl: 'https://ecocyclehub-green.vercel.app/',
   problem: 'Waste, unused products, and second-hand goods are often not managed properly. Users do not know where to recycle/repair items, how much old items are worth, or how their sustainable actions create impact. Buyers need a trusted way to purchase reused products, and sellers need a verified platform to list them.',
