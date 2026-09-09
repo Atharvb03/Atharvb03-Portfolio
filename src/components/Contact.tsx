@@ -4,7 +4,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { ToastAction } from '@/components/ui/toast';
 import emailjs from '@emailjs/browser';
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const OWNER_EMAIL = 'atharvb03@gmail.com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', subject: '', message: '' });
@@ -16,27 +22,55 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const failWithFallback = () => {
+    const mailto = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `${formData.message}\n\nFrom: ${formData.firstName} ${formData.lastName} <${formData.email}>`
+    )}`;
+    toast({
+      title: "Couldn't send the message",
+      description: `Please email me directly at ${OWNER_EMAIL}.`,
+      variant: "destructive",
+      action: (
+        <ToastAction altText={`Email ${OWNER_EMAIL}`} onClick={() => window.open(mailto, '_self')}>
+          Email instead
+        </ToastAction>
+      ),
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error('EmailJS environment variables are missing');
+      failWithFallback();
+      return;
+    }
+
     setIsSubmitting(true);
     try {
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         {
           from_name: `${formData.firstName} ${formData.lastName}`,
           name: `${formData.firstName} ${formData.lastName}`,
           from_email: formData.email,
           email: formData.email,
+          reply_to: formData.email,
+          subject: formData.subject,
+          title: formData.subject,
           message: `Subject: ${formData.subject}\n\n${formData.message}`,
           to_name: 'Atharv',
+          to_email: OWNER_EMAIL,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        EMAILJS_PUBLIC_KEY
       );
       toast({ title: "Message Sent! 🎉", description: "I'll get back to you soon!" });
       setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' });
-    } catch {
-      toast({ title: "Error Sending Message", description: "Please try again or contact me directly.", variant: "destructive" });
+    } catch (error) {
+      console.error('EmailJS send failed', error);
+      failWithFallback();
     } finally {
       setIsSubmitting(false);
     }
