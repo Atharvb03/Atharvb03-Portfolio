@@ -55,7 +55,7 @@ const Footer = () => {
                 Atharv Bendkhale
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Computer Science Engineering student passionate about AI, 
+                Computer Science graduate passionate about AI, 
                 full-stack development, and creating innovative solutions 
                 to real-world problems.
               </p>

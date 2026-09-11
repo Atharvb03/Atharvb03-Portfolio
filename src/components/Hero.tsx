@@ -93,7 +93,7 @@ const Hero = () => {
 
             {/* Description with fade-in */}
             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              Motivated Computer Science student passionate about developing intelligent systems and solving real-world problems using AI technologies.
+              Computer Science graduate passionate about developing intelligent systems and solving real-world problems using AI technologies.
             </p>
 
             {/* Buttons with staggered animations */}
@@ -142,7 +142,7 @@ const Hero = () => {
 
           {/* RIGHT — photo, 45% */}
           <div className="w-full lg:w-[45%] flex justify-center mt-12 lg:mt-0 fade-in-up animate" style={{ animationDelay: '0.3s' }}>
-            <div className="relative flex items-center justify-center" style={{ width: 500, height: 500 }}>
+            <div className="relative flex items-center justify-center w-[70vw] max-w-[500px] aspect-square">
 
               {/* Outer pulsing ring */}
               <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-pulse shadow-lg" style={{ animationDuration: '3s' }}></div>

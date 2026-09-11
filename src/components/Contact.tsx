@@ -189,7 +189,7 @@ const Contact = () => {
               <div>
                 <h4 className="font-bold text-foreground mb-1">Based in India</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Currently pursuing B.E. in Computer Science at Gharda Institute of Technology.
+                  Completed B.E. in CSE-AIML (2026) at Gharda Institute of Technology.
                   Open to remote opportunities and willing to relocate for the right position.
                 </p>
               </div>
