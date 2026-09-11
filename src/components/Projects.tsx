@@ -277,7 +277,7 @@ const mainProjects = [
   // 2. PRP (Project Review Platform)
   {
     title: 'Project Review Platform',
-    badge: 'Deployed at College',
+    badge: undefined,
     category: 'Full-Stack Web Application',
     status: 'Completed',
     duration: 'June 2024 – Mar 2025',
